@@ -20,10 +20,14 @@ public class LoanTest {
     };
 
     Electronics[] electronics = {
-            new Electronics("Laptop", 3, 7999,95),
-            new Electronics("Tablet", 3, 1999,95),
-            new Electronics("Webcamera", 3, 499,95)
+            new Electronics("Laptop", 3, 7999.95),
+            new Electronics("Tablet", 3, 1999.95),
+            new Electronics("Webcamera", 3, 499.95)
     };
+        System.out.print("Hvor mange ting vil du låne?");
+        int antal = Integer.parseInt(scanner.nextLine());
+        int låntCount = 0;
+
 
     }
 }

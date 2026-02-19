@@ -1,4 +1,4 @@
-public abstract class Electronics extends LoanItem{
+public class Electronics extends LoanItem {
     private double baseCost;
 
     public Electronics(String title, int loanDays, double baseCost)  {
@@ -6,17 +6,17 @@ public abstract class Electronics extends LoanItem{
         this.baseCost = baseCost;
     }
 
-    public double getBaseCost(){
+    public double getBaseCost() {
         return baseCost;
     }
 
+    @Override
     public double calculateLateFees() {
-        return baseCost * 0.20;
+        return baseCost * 0.20; // fast gebyr
     }
 
-    public String toString() {
-        return "Title: " + getTitle() + "\n Loan Days: " + getLoanDays() + "\n Late fee per day: " + calculateLateFees() + " kr";
-        //super.toString();
+    @Override
+    public String getDescription() {
+        return "Electronics: " + getTitle() + " | Base cost: " + baseCost;
     }
-
 }
