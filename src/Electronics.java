@@ -15,7 +15,7 @@ public abstract class Electronics extends LoanItem{
     }
 
     public String toString() {
-        return "Title: " + getTitle() + "Loan Days: " + getLoanDays() + "Late fee per day: " + calculateLateFees() + " kr";
+        return "Title: " + getTitle() + "\n Loan Days: " + getLoanDays() + "\n Late fee per day: " + calculateLateFees() + " kr";
         //super.toString();
     }
 
