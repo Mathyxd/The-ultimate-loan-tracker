@@ -12,5 +12,5 @@ public class Book extends LoanItem {
     public double calculateLateFees() { return getLoanDays() * 2.75; }
 
     @Override
-    public String getDescription() {return "Book" + getTitle() + "Author" + author; }
+    public String getDescription() {return "Book " + getTitle() + " Author " + author; }
 }
