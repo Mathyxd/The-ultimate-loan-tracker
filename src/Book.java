@@ -2,7 +2,7 @@ public class Book extends LoanItem {
 
     private String author;
 
-    public Book(String title, int loanDays) { super(title, loanDays);}
+    public Book(String title, int loanDays, String author) { super(title, loanDays); this.author = author;}
 
     public String getAuthor() { return author; }
 
