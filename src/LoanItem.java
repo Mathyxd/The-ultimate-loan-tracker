@@ -4,7 +4,7 @@ public abstract class LoanItem {
     private int loanDays;
 
     //Constructor
-    public Loanitem(String title, int loanDays) {
+    public LoanItem(String title, int loanDays) {
         this.title = title;
         this.loanDays = loanDays;
     }
@@ -27,7 +27,7 @@ public abstract class LoanItem {
     this.loanDays = loanDays;
     }
 
-    //Subklasser implementeres
+    //Polymorphic method
     public abstract double calculateLateFees();
 
     public abstract String getDescription();
