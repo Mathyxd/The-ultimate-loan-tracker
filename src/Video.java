@@ -15,7 +15,7 @@ public class Video extends LoanItem {
     }
 
     @Override
-    public double calculateLateFees() { return getLoanDays() * 3.99; }
+    public double calculateLateFees() { return getLoanDays() * 3.75; }
 
     @Override
     public String getDescription() {return "video " + getTitle() + " Duration (minutes) " + duration; }

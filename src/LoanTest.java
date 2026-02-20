@@ -42,10 +42,10 @@ public class LoanTest {
                         }
                     }
                     System.out.print("Vælg en bog (1-3): ");
-                    int bValg = Integer.parseInt(scanner.nextLine()) - 1;
-                    if (bValg >= 0 && bValg < books.length && books[bValg] != null) {
-                        lånte[låntCount] = books[bValg];
-                        books[bValg] = null;
+                    int bVal = Integer.parseInt(scanner.nextLine()) - 1;
+                    if (bVal >= 0 && bVal < books.length && books[bVal] != null) {
+                        lånte[låntCount] = books[bVal];
+                        books[bVal] = null;
                         låntCount++;
                     } else {
                         System.out.println("Ugyldigt valg eller allerede lånt. Prøv igen.");
@@ -60,10 +60,10 @@ public class LoanTest {
                         }
                     }
                     System.out.print("Vælg en video (1-3): ");
-                    int vValg = Integer.parseInt(scanner.nextLine()) - 1;
-                    if (vValg >= 0 && vValg < videos.length && videos[vValg] != null) {
-                        lånte[låntCount] = videos[vValg];
-                        videos[vValg] = null;
+                    int vVal = Integer.parseInt(scanner.nextLine()) - 1;
+                    if (vVal >= 0 && vVal < videos.length && videos[vVal] != null) {
+                        lånte[låntCount] = videos[vVal];
+                        videos[vVal] = null;
                         låntCount++;
                     } else {
                         System.out.println("Ugyldigt valg eller allerede lånt. Prøv igen!");
@@ -78,10 +78,10 @@ public class LoanTest {
                         }
                     }
                     System.out.print("Vælg en elektronik (1-3): ");
-                    int eValg = Integer.parseInt(scanner.nextLine()) - 1;
-                    if (eValg >= 0 && eValg < electronics.length && electronics[eValg] != null) {
-                        lånte[låntCount] = electronics[eValg];
-                        electronics[eValg] = null;
+                    int eVal = Integer.parseInt(scanner.nextLine()) - 1;
+                    if (eVal >= 0 && eVal < electronics.length && electronics[eVal] != null) {
+                        lånte[låntCount] = electronics[eVal];
+                        electronics[eVal] = null;
                         låntCount++;
                     } else {
                         System.out.println("Ugyldigt valg eller allerede lånt. Prøv igen!");
@@ -92,6 +92,15 @@ public class LoanTest {
                     System.out.println("Ugyldig type, prøv igen.");
                     break;
             }
+            System.out.println("");
+            System.out.println("A list of the items you have loaned!");
+
+            for (int i = 0; i < låntCount; i++) {
+                System.out.println("Title: " + lånte[i].getTitle() + ", Loan days: " + lånte[i].getLoanDays());
+                System.out.println("Late fee per late day: " + lånte[i].calculateLateFees() + "kr");
+            }
+            System.out.println("Summary:");
+            System.out.println("You borrowed " + låntCount + " items today.");
         }
     }
 }

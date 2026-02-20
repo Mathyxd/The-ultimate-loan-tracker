@@ -12,7 +12,7 @@ public class Electronics extends LoanItem {
 
     @Override
     public double calculateLateFees() {
-        return baseCost * 0.20; // fast gebyr
+        return baseCost * 0.02; // fast gebyr
     }
 
     @Override
