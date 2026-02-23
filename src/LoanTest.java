@@ -92,15 +92,41 @@ public class LoanTest {
                     System.out.println("Ugyldig type, prøv igen.");
                     break;
             }
-            System.out.println("");
-            System.out.println("A list of the items you have loaned!");
+        }
 
-            for (int i = 0; i < låntCount; i++) {
-                System.out.println("Title: " + lånte[i].getTitle() + ", Loan days: " + lånte[i].getLoanDays());
-                System.out.println("Late fee per late day: " + lånte[i].calculateLateFees() + "kr");
+        sortLoanItemsByTitle(lånte, låntCount);
+
+        printLoanedItems(lånte, låntCount);
+
+        scanner.close();
+    }
+
+    public static void sortLoanItemsByTitle(LoanItem[] lånte, int låntCount) {
+        for (int i = 0; i < låntCount - 1; i++) {
+            for (int j = 0; j < låntCount - 1 - i; j++) {
+                if (lånte[j].getTitle().compareToIgnoreCase(lånte[j + 1].getTitle()) > 0) {
+                    LoanItem temp = lånte[j];
+                    lånte[j] = lånte[j + 1];
+                    lånte[j + 1] = temp;
+                }
             }
-            System.out.println("Summary:");
-            System.out.println("You borrowed " + låntCount + " items today.");
         }
     }
+
+    public static void printLoanedItems(LoanItem[] lånte, int låntCount) {
+        System.out.println();
+        System.out.println("A sorted list of the items you have loaned!");
+        for (int i = 0; i < låntCount; i++) {
+            System.out.println("Title: " + lånte[i].getTitle() +
+                    ", Loan days: " + lånte[i].getLoanDays());
+            System.out.println("Late fee per late day: " +
+                    lånte[i].calculateLateFees() + " kr");
+        }
+        System.out.println();
+        System.out.println("Summary:");
+        System.out.println("You borrowed " + låntCount + " items today.");
+    }
 }
+
+
+
