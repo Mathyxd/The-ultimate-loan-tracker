@@ -15,7 +15,7 @@ public class Electronics extends LoanItem {
         return baseCost * 0.02; // fast gebyr
     }
 
-    @Override
+    @Override //
     public String getDescription() {
         return "Electronics: " + getTitle() + " | Base cost: " + baseCost;
     }
